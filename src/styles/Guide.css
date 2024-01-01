@@ -1,0 +1,51 @@
+.guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+}
+.guide > div > p {
+  opacity: 0.5;
+  /* display: inline-block; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.guide > div > p:hover {
+  opacity: 1;
+}
+.user-message {
+  position: absolute;
+  background: #faf4cb;
+  border-radius: 24px 24px 0px 24px;
+  padding: 12px;
+  margin: 8px;
+  right: 1%;
+}
+.user-message > p {
+  background: linear-gradient(to right, #fb8b24 0%, #e36414 100%);
+}
+.admin-message {
+  background: #ffd76a;
+  color: white;
+  border-radius: 24px 24px 24px 0px;
+  padding: 12px;
+  margin: 8px;
+  position: absolute;
+  left: 1%;
+}
+.admin-message > p {
+  background: white;
+}
+.user-first {
+  top: 0%;
+}
+.user-second {
+  top: 20%;
+}
+.admin-first {
+  top: 8%;
+}
+.admin-second {
+  top: 32%;
+}

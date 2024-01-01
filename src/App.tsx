@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-
+import { Url } from "./utils/baseUrl";
 function App() {
   const [formData, setFormData] = useState("");
 
@@ -11,12 +11,21 @@ function App() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // onSubmit(formData);
+    const cacheUrl = `${Url + formData}`;
+    const win = window.open(cacheUrl, "_blank");
+    win?.focus();
   }
   return (
     <>
       <form onSubmit={handleSubmit} className="search-bar">
-        <input type="search" name="search" pattern=".*\S.*" value={formData} onChange={handleInputChange} required/>
+        <input
+          type="search"
+          name="search"
+          pattern=".*\S.*"
+          value={formData}
+          onChange={handleInputChange}
+          required
+        />
         <button className="search-btn" type="submit">
           <span>Search</span>
         </button>

@@ -1,6 +1,8 @@
 import { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 import { Url } from "./utils/baseUrl";
+import Guide from "./components/Guide";
+import Candles from "./components/Candles";
 function App() {
   const [formData, setFormData] = useState("");
 
@@ -17,11 +19,12 @@ function App() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit} className="search-bar">
+      <Candles />
+      <Guide />
+      <form onSubmit={handleSubmit} className="search-bar" autoComplete="off">
         <input
-          type="search"
-          name="search"
-          pattern=".*\S.*"
+          name="url"
+          pattern="https://.*"
           value={formData}
           onChange={handleInputChange}
           required
